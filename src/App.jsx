@@ -1,28 +1,40 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-zinc-950 text-zinc-50">
       <Navbar />
-      <Hero />
-      <Features />
-      <Pricing />
-      <Testimonials />
-      <CTA />
-      <footer className="bg-black border-t border-cyan-500/20">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-neutral-400 text-sm">© {new Date().getFullYear()} TempatHosting. All rights reserved.</p>
-          <div className="text-sm text-neutral-400">Fast, secure, and minimalist hosting with neon blue highlights.</div>
+      <main>
+        <Hero />
+        <Features />
+        <Pricing />
+        <section id="contact" className="py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+              <h2 className="text-2xl font-semibold text-white">Butuh bantuan memilih paket?</h2>
+              <p className="mt-2 text-zinc-300">Tim kami siap membantu menentukan solusi yang paling pas.</p>
+              <form className="mt-6 grid gap-4 sm:grid-cols-2">
+                <input type="text" placeholder="Nama" className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-2 text-sm placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
+                <input type="email" placeholder="Email" className="w-full rounded-md bg-white/5 border border-white/10 px-4 py-2 text-sm placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
+                <textarea placeholder="Pesan" rows="3" className="sm:col-span-2 w-full rounded-md bg-white/5 border border-white/10 px-4 py-2 text-sm placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
+                <button className="sm:col-span-2 inline-flex justify-center rounded-md bg-emerald-500/90 hover:bg-emerald-500 text-white px-5 py-2.5 text-sm font-medium transition-colors">Kirim</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between text-sm text-zinc-400">
+          <p>© {new Date().getFullYear()} TempatHosting. Semua hak dilindungi.</p>
+          <div className="flex items-center gap-4">
+            <a href="#" className="hover:text-zinc-200">Kebijakan Privasi</a>
+            <a href="#" className="hover:text-zinc-200">Syarat Layanan</a>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
-
-export default App;

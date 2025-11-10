@@ -1,53 +1,47 @@
-import React from 'react';
-import { CheckCircle2, ArrowRight, Shield, Server, Globe2, Zap } from 'lucide-react';
+import { Shield, Rocket, Server, Globe2 } from 'lucide-react';
 
-const features = [
+const items = [
   {
-    icon: <Zap className="w-5 h-5 text-cyan-400" />,
-    title: 'Blazing Performance',
-    desc: 'NVMe SSDs, HTTP/3, and global CDN for ultra-low latency.'
+    icon: Shield,
+    title: 'Keamanan Solid',
+    desc: 'Proteksi DDoS, sertifikat SSL gratis, dan isolasi kontainer untuk ketenangan Anda.'
   },
   {
-    icon: <Shield className="w-5 h-5 text-cyan-400" />,
-    title: 'Security First',
-    desc: 'Free SSL, DDoS protection, and automatic backups.'
+    icon: Rocket,
+    title: 'Performa Tinggi',
+    desc: 'Jaringan cepat dengan edge caching dan NVMe storage untuk waktu muat yang singkat.'
   },
   {
-    icon: <Server className="w-5 h-5 text-cyan-400" />,
-    title: 'Scalable by Design',
-    desc: 'From shared to VPS — grow without migrations.'
+    icon: Server,
+    title: 'Skalabilitas Mudah',
+    desc: 'Naik-turun sumber daya secara fleksibel tanpa downtime.'
   },
   {
-    icon: <Globe2 className="w-5 h-5 text-cyan-400" />,
-    title: 'Global Edge',
-    desc: 'Serve from multiple regions for worldwide audiences.'
+    icon: Globe2,
+    title: 'Global CDN',
+    desc: 'Jangkau pengguna di seluruh dunia dengan latensi minimal.'
   }
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="relative bg-black text-white py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="features" className="relative py-20">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold">Why choose us</h2>
-          <p className="mt-3 text-neutral-300">Minimal, reliable, and engineered for speed. Here’s what makes us different.</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white">Fitur utama yang Anda butuhkan</h2>
+          <p className="mt-2 text-zinc-300">Disusun untuk stabilitas dan kemudahan, tanpa kerumitan.</p>
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((f, i) => (
-            <div key={i} className="rounded-xl border border-cyan-500/20 bg-neutral-900/40 p-5">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-500/10 mb-3">
-                {f.icon}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item) => (
+            <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:bg-white/[0.06] transition-colors">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+                <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="font-semibold text-lg">{f.title}</h3>
-              <p className="text-neutral-300 text-sm mt-2">{f.desc}</p>
+              <h3 className="mt-4 font-medium text-white">{item.title}</h3>
+              <p className="mt-1 text-sm text-zinc-300">{item.desc}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 flex items-center gap-3 text-cyan-300">
-          <CheckCircle2 className="w-5 h-5" />
-          <span>24/7 human support • 99.99% uptime SLA • 30-day refund</span>
         </div>
       </div>
     </section>
